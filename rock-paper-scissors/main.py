@@ -49,14 +49,15 @@ computer = random.randint(0, 2)
 
 player = int(input("What do you choose?\nType 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
 
-if player > 3 or player < 0:
+if player > 2 or player < 0:
 	player = 3
 	
 outcome = ""
 
 if player == computer:
 	outcome = "draw"
-elif (player == 0 and computer == 2) or (player > computer and player < 2):
+# elif (player == 0 and computer == 2) or (player > computer and player != 2):
+elif (player == 0 and computer == 2) or (player == 1 and computer == 0) or (player == 2 and computer == 1):
 	outcome = "WOOHOO\nYOU WON"
 else:
 	outcome = "whomp whomp\nyou lose"
@@ -64,3 +65,7 @@ else:
 print(f"You chose: \n {options[player]}")
 print(f"Computer chose:\n {options[computer]}")
 print(outcome)
+
+# 0 beats 2
+# 1 beats 0
+# 2 beats 1
