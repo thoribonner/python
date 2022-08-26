@@ -36,14 +36,16 @@ def play_round():
     while not gameover:
         while optionA["name"] == optionB["name"]:
             optionB = choose_account()
+        clear()
         print(logo)
+        if score != 0: print(f"You're right! Current score: {score}\n\n")
         print(f"Compare A: {format(optionA)}")
         print(vs)
         print(f"Againt B: {format(optionB)}")
         af = optionA["follower_count"]
         bf = optionB["follower_count"]
 
-        print(f"A = {af}, B = {bf}")
+        print(f"\n\nA = {af}, B = {bf}\n\n")
 
         guess = input("Who has more followers? Type 'A' or 'B': ").lower()
 
@@ -53,7 +55,6 @@ def play_round():
             score += 1
             optionA = optionB
             optionB = choose_account()
-            clear()
         else:
             gameover = True
             clear()
